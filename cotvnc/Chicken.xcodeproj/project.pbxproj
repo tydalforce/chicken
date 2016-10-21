@@ -1159,6 +1159,7 @@
 				7F7A942605E71B5C00E20416 /* Sources */,
 				7F7A945805E71B5C00E20416 /* Frameworks */,
 				DA36490A1293A27900FB8272 /* CopyFiles */,
+				1A6258971DBAA6AA008CD537 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1225,6 +1226,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A6258971DBAA6AA008CD537 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# builds dmg\nDMG=${BUILD_ROOT}/${PRODUCT_NAME}_${_CHICKEN_VERSION_}.dmg\n\nrm -f $DMG\nhdiutil create $DMG -volname \"${PRODUCT_NAME}\" -fs HFS+ \\\n    -srcfolder \"${TARGET_BUILD_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F7A942605E71B5C00E20416 /* Sources */ = {
