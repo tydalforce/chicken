@@ -226,10 +226,13 @@
 
 - (void)tunnelFailed:(NSString *)err
 {
-    [tunnelClosedTimer invalidate];
-    [tunnelClosedTimer release];
-    tunnelClosedTimer = nil;
-
+    if (tunnelClosedTimer)
+      {
+          [tunnelClosedTimer invalidate];
+          [tunnelClosedTimer release];
+          tunnelClosedTimer = nil;
+      }
+  
     [self tunnelledConnFailed:err];
 
     /* We may not have received the serverClosed message yet, in which case we
