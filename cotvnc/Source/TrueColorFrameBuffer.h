@@ -24,7 +24,6 @@
 @interface TrueColorFrameBuffer : FrameBuffer
 {
     unsigned int*	pixels;
-    unsigned int*	scratchpad;
 }
 
 @end

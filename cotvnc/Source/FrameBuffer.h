@@ -22,8 +22,6 @@
 #import <AppKit/AppKit.h>
 #import "rfbproto.h"
 
-#define SCRATCHPAD_SIZE			(384*384)
-
 typedef union _FrameBufferColor {
     unsigned char	_u8;
     unsigned short	_u16;

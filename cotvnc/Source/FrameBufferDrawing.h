@@ -460,23 +460,9 @@ printf("draw x=%f y=%f w=%f h=%f at x=%f y=%f\n", aRect.origin.x, aRect.origin.y
     start = pixels + ((int)r.origin.y) * (int)size.width + (int)r.origin.x;
     r.origin.x = floor(aPoint.x);   // Also round the on-screen location to
     r.origin.y = floor(aPoint.y);   // align with pixel boundaries
-    if((aRect.size.width * aRect.size.height) > SCRATCHPAD_SIZE || YES) {
-        bpr = size.width * sizeof(FBColor);
-        NSDrawBitmap(r, r.size.width, r.size.height, bitsPerColor, samplesPerPixel, sizeof(FBColor) * 8, bpr, NO, NO, NSDeviceRGBColorSpace, (const unsigned char**)&start);
-    } else {
-        FBColor* sp = scratchpad;
-        int lines = r.size.height;
-        int stride = (unsigned int)size.width - (unsigned int)r.size.width;
 
-        while(lines--) {
-            memcpy(sp, start, r.size.width * sizeof(sp));
-            start += (unsigned int) r.size.width;
-            sp += (unsigned int) r.size.width;
-            start += stride;
-        }
-        bpr = r.size.width * sizeof(FBColor);
-        NSDrawBitmap(r, r.size.width, r.size.height, bitsPerColor, samplesPerPixel, sizeof(FBColor) * 8, bpr, NO, NO, NSDeviceRGBColorSpace, (const unsigned char**)&scratchpad);
-    }
+    bpr = size.width * sizeof(FBColor);
+    NSDrawBitmap(r, r.size.width, r.size.height, bitsPerColor, samplesPerPixel, sizeof(FBColor) * 8, bpr, NO, NO, NSDeviceRGBColorSpace, (const unsigned char**)&start);
 }
 
 /*

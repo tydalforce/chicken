@@ -24,7 +24,6 @@
 @interface GrayScaleFrameBuffer : FrameBuffer
 {
     unsigned char*	pixels;
-    unsigned char*	scratchpad;
 }
 
 @end

@@ -24,7 +24,6 @@
 @interface LowColorFrameBuffer : FrameBuffer
 {
     unsigned char*	pixels;
-    unsigned char*	scratchpad;
 }
 
 @end
