@@ -454,12 +454,14 @@ printf("draw x=%f y=%f w=%f h=%f at x=%f y=%f\n", aRect.origin.x, aRect.origin.y
     if(NSMaxX(r) >= size.width) {
         r.size.width = size.width - r.origin.x;
     }
+    int yshift = 0;
     if(NSMaxY(r) >= size.height) {
-        r.size.height = size.height - r.origin.y;
+        r.size.height -= 1;
+        yshift = 1;
     }
     start = pixels + ((int)r.origin.y) * (int)size.width + (int)r.origin.x;
     r.origin.x = floor(aPoint.x);   // Also round the on-screen location to
-    r.origin.y = floor(aPoint.y);   // align with pixel boundaries
+    r.origin.y = floor(aPoint.y)+yshift;   // align with pixel boundaries
 
     bpr = size.width * sizeof(FBColor);
     NSDrawBitmap(r, r.size.width, r.size.height, bitsPerColor, samplesPerPixel, sizeof(FBColor) * 8, bpr, NO, NO, NSDeviceRGBColorSpace, (const unsigned char**)&start);
