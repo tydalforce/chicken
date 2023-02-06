@@ -229,7 +229,6 @@
     if (tunnelClosedTimer)
       {
           [tunnelClosedTimer invalidate];
-          [tunnelClosedTimer release];
           tunnelClosedTimer = nil;
       }
   

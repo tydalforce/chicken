@@ -134,7 +134,7 @@ register unsigned long *into;
 {
 	register unsigned long *from, *endp;
 
-	from = KnL, endp = &KnL[32];
+    from = KnL; endp = &KnL[32];
 	while( from < endp ) *into++ = *from++;
 	return;
 	}
@@ -144,7 +144,7 @@ register unsigned long *from;
 {
 	register unsigned long *to, *endp;
 
-	to = KnL, endp = &KnL[32];
+    to = KnL; endp = &KnL[32];
 	while( to < endp ) *to++ = *from++;
 	return;
 	}
