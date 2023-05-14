@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Chicken</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Chicken version 2.2b2, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers.</string>
+	<string>Chicken version 2.2b3, Copyright 2002-2006 Geekspiff, 2010-2011 Chicken developers. - UNSUPPORTED PRIVATE BUILD</string>
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -35,7 +35,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.2b3</string>
+	<string>2.2b3-private-unsupported</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>NSAppleScriptEnabled</key>
